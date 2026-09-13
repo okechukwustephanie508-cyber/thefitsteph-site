@@ -44,7 +44,8 @@ later phases.
    cp .env.example .env.local
    ```
 
-   - `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` are public.
+   - `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` are
+     public.
    - `SUPABASE_SERVICE_ROLE_KEY` is server-only. Never expose it to the
      browser or commit it.
 
