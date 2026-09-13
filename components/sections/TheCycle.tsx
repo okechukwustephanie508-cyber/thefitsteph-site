@@ -29,7 +29,7 @@ export default function TheCycle() {
           title="You start. You stop. You start again."
         />
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/70">
-          This is the cycle almost everyone knows &mdash; the repeated loop of
+          This is the cycle almost everyone knows: the repeated loop of
           committing to a fitness or health journey, losing momentum, stopping
           altogether, and eventually starting over from zero. It isn&rsquo;t a
           lack of willpower. It&rsquo;s a lack of something to keep you going

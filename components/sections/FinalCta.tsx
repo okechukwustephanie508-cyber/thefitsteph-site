@@ -8,7 +8,7 @@ export default function FinalCta() {
         <h2 className="max-w-2xl font-display text-3xl font-medium leading-tight text-cream sm:text-4xl md:text-5xl">
           Don&rsquo;t Just Start. Stay With It.
         </h2>
-        <Button href="/get-started">Get started.</Button>
+        <Button href="/get-started">Get Started</Button>
       </Container>
     </section>
   );

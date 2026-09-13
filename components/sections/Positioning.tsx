@@ -4,22 +4,22 @@ const pillars = [
   {
     number: "01",
     name: "Accountability",
-    body: "Knowing what to do has never been the hard part. The gap opens the moment no one is expecting you to show up. Accountability closes that gap — a coach, a check-in, a community that notices when you go quiet turns intention into something you actually follow through on.",
+    body: "Knowing what to do has never been the hard part. Accountability gives you a reason to show up, a structure to follow, and someone who notices when you don’t.",
   },
   {
     number: "02",
     name: "Consistency",
-    body: "Consistency is what accountability makes possible. It isn’t a flawless streak — it’s returning to the work after a missed day, a slow week, or a rough start. Individual actions only become habits and progress when you keep showing up, not when you get everything perfect.",
+    body: "Consistency is not about getting everything right. It is about returning to the work, even after a missed day or a difficult week. That is how small actions become lasting change.",
   },
   {
     number: "03",
     name: "Fitness",
-    body: "Fitness is the action and the output — the workouts, the movement, the healthier habits you actually do. It’s what consistency looks like in practice, not the thing you have to force yourself into before the accountability and consistency are already in place.",
+    body: "Fitness is what you do. You move, you train, you eat better, and you build healthier habits. Consistency is what turns those actions into results.",
   },
   {
     number: "04",
     name: "Transformation",
-    body: "Transformation is what tends to follow from repeatedly showing up and staying consistent. It isn’t instant and it looks different for everyone, but it’s the result that becomes possible once accountability and consistency are no longer the missing piece.",
+    body: "Transformation is what becomes possible when you stop starting over. Keep showing up, keep building, and eventually you begin to see the difference.",
   },
 ];
 
@@ -35,9 +35,9 @@ export default function Positioning() {
         </h2>
         <p className="max-w-2xl text-lg leading-relaxed text-cream/80">
           Fitness is what you do. Accountability is what keeps you doing it.
-          TheFitSteph exists to close that gap &mdash; not with another
-          workout plan, but with the structure, check-ins, and community that
-          make consistency sustainable.
+          TheFitSteph exists to close that gap. Not with another workout
+          plan, but with the structure, check-ins, and community that make
+          consistency sustainable.
         </p>
         <div className="mt-4 flex flex-col gap-2 border-l-2 border-gold pl-6 text-cream/90 sm:flex-row sm:gap-10 sm:border-l-0 sm:border-t-2 sm:pl-0 sm:pt-6">
           <span className="font-display text-xl">Accountability</span>

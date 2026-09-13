@@ -14,8 +14,8 @@ export default function Transformation() {
           />
           <p className="max-w-xl text-lg leading-relaxed text-ink/70">
             Every member who has changed their body, their habits, or their
-            confidence started the same way &mdash; not with a perfect plan,
-            but with consistency they didn&rsquo;t have before. Results take
+            confidence started the same way. Not with a perfect plan, but
+            with consistency they didn&rsquo;t have before. Results take
             time and vary from person to person, but staying with it is what
             makes them possible.
           </p>

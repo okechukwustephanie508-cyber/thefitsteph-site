@@ -32,6 +32,6 @@ export const programs: Program[] = [
     price: "₦100,000",
     cadence: "per month",
     description:
-      "Direct, personal accountability with TheFitSteph — the most hands-on way to finally stay consistent.",
+      "Direct, personal accountability with TheFitSteph: the most hands-on way to finally stay consistent.",
   },
 ];
