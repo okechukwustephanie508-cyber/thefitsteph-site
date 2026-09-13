@@ -1,6 +1,7 @@
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
+import TransformationCarousel from "@/components/ui/TransformationCarousel";
+import { transformationPhotos } from "@/lib/transformations";
 
 export default function Transformation() {
   return (
@@ -19,15 +20,8 @@ export default function Transformation() {
             makes them possible.
           </p>
         </div>
-        <div className="order-1 grid grid-cols-2 gap-4 lg:order-2">
-          <ImagePlaceholder
-            label="Member transformation photo &mdash; coming soon"
-            className="col-span-2 sm:col-span-1"
-          />
-          <ImagePlaceholder
-            label="Member transformation photo &mdash; coming soon"
-            className="col-span-2 sm:col-span-1"
-          />
+        <div className="order-1 lg:order-2">
+          <TransformationCarousel photos={transformationPhotos} />
         </div>
       </Container>
     </section>
