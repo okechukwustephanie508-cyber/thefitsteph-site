@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import { programs } from "@/lib/programs";
 
@@ -28,14 +29,29 @@ export default function GetStartedPage() {
         </div>
         <ul className="grid w-full gap-4 sm:grid-cols-2">
           {programs.map((program) => (
-            <li
-              key={program.name}
-              className="border border-ink/10 bg-cream-dark p-6"
-            >
-              <p className="font-display text-lg text-ink">{program.name}</p>
-              <p className="mt-1 text-sm text-ink/60">
-                {program.price} &middot; {program.cadence}
-              </p>
+            <li key={program.name}>
+              <Link
+                href={program.href}
+                className="group flex h-full flex-col justify-between gap-6 border border-ink/10 bg-cream-dark p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-ink/25 hover:shadow-lg hover:shadow-ink/5 active:translate-y-0 active:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green"
+              >
+                <div>
+                  <p className="font-display text-lg text-ink">
+                    {program.name}
+                  </p>
+                  <p className="mt-1 text-sm text-ink/60">
+                    {program.price} &middot; {program.cadence}
+                  </p>
+                </div>
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-green">
+                  View Program
+                  <span
+                    aria-hidden="true"
+                    className="transition-transform duration-300 ease-out group-hover:translate-x-1"
+                  >
+                    &rarr;
+                  </span>
+                </span>
+              </Link>
             </li>
           ))}
         </ul>

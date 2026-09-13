@@ -3,6 +3,7 @@ export type Program = {
   price: string;
   cadence: string;
   description: string;
+  href: string;
 };
 
 export const programs: Program[] = [
@@ -12,6 +13,7 @@ export const programs: Program[] = [
     cadence: "per month",
     description:
       "Structured programming and remote check-ins that keep you showing up, wherever you train.",
+    href: "/d30/remote-gym",
   },
   {
     name: "D30 DIY",
@@ -19,6 +21,7 @@ export const programs: Program[] = [
     cadence: "one-time",
     description:
       "The full D30 framework to run on your own terms, built for people who want the system without the schedule.",
+    href: "/d30/diy",
   },
   {
     name: "D30 Group",
@@ -26,6 +29,7 @@ export const programs: Program[] = [
     cadence: "per month",
     description:
       "Train and stay accountable alongside a community moving through the same 30-day cycle as you.",
+    href: "/d30/group",
   },
   {
     name: "One-on-One Coaching",
@@ -33,5 +37,6 @@ export const programs: Program[] = [
     cadence: "per month",
     description:
       "Direct, personal accountability with TheFitSteph: the most hands-on way to finally stay consistent.",
+    href: "/one-on-one",
   },
 ];
