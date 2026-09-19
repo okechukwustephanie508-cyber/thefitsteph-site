@@ -12,7 +12,7 @@ export const programs: Program[] = [
     price: "₦10,000",
     cadence: "per month",
     description:
-      "Structured programming and remote check-ins that keep you showing up, wherever you train.",
+      "Structured live workouts and accountability for showing up, session after session.",
     href: "/d30/remote-gym",
   },
   {
@@ -20,7 +20,7 @@ export const programs: Program[] = [
     price: "₦15,000",
     cadence: "one-time",
     description:
-      "The full D30 framework to run on your own terms, built for people who want the system without the schedule.",
+      "The full D30 structure, built for going at it on your own schedule and your own pace.",
     href: "/d30/diy",
   },
   {
@@ -28,7 +28,7 @@ export const programs: Program[] = [
     price: "₦30,000",
     cadence: "per month",
     description:
-      "Train and stay accountable alongside a community moving through the same 30-day cycle as you.",
+      "Accountability, community and a shared 30-day commitment, for the woman who is tired of starting over.",
     href: "/d30/group",
   },
   {
@@ -36,7 +36,7 @@ export const programs: Program[] = [
     price: "₦100,000",
     cadence: "per month",
     description:
-      "Direct, personal accountability with TheFitSteph: the most hands-on way to finally stay consistent.",
+      "A personalized plan built around your life, with direct accountability from TheFitSteph.",
     href: "/one-on-one",
   },
 ];

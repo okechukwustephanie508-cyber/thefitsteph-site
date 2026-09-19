@@ -22,6 +22,31 @@
   --color-gold-light: var(--color-gold-light);
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-inter);
+  --animate-card-wiggle: card-wiggle 6s ease-in-out infinite;
+}
+
+/* A brief, low-amplitude nudge near the end of each cycle rather than
+   continuous motion, so a card reads as quietly interactive without ever
+   feeling like it is jittering. Transform-only, so it never affects
+   layout. */
+@keyframes card-wiggle {
+  0%,
+  92%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  93% {
+    transform: translateX(-1.5px) rotate(-0.4deg);
+  }
+  95% {
+    transform: translateX(1.5px) rotate(0.4deg);
+  }
+  97% {
+    transform: translateX(-1px) rotate(-0.2deg);
+  }
+  99% {
+    transform: translateX(0.5px) rotate(0.1deg);
+  }
 }
 
 html {

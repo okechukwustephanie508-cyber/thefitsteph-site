@@ -8,7 +8,7 @@ import { programs } from "@/lib/programs";
 export const metadata: Metadata = {
   title: "One-on-One Coaching",
   description:
-    "Direct, personal accountability with TheFitSteph: the most hands-on way to finally stay consistent.",
+    "A personalized plan built around your life, with direct accountability from TheFitSteph.",
 };
 
 // lib/programs.ts is the single source of truth for pricing across the
@@ -17,24 +17,24 @@ export const metadata: Metadata = {
 const program = programs.find((p) => p.href === "/one-on-one")!;
 
 const whoItsFor = [
-  "Wants the most direct, hands-on level of coaching",
-  "Wants personal accountability built specifically around them",
-  "Wants ongoing monthly support, not a self-paced or group setting",
-  "Wants consistency with direct guidance from TheFitSteph",
+  "Wants a plan built around their actual schedule and responsibilities",
+  "Wants personalized accountability, not a one-size-fits-all program",
+  "Wants flexibility a group or self-paced program cannot offer",
+  "Wants support that adapts as life changes",
 ];
 
 const included = [
   {
-    title: "Direct Personal Coaching",
-    body: "Direct, personal accountability with TheFitSteph, built around you.",
+    title: "A Personalized Plan",
+    body: "Built around your schedule, your responsibilities and what you can realistically sustain.",
   },
   {
-    title: "The Most Hands-On Support",
-    body: "The most hands-on way to finally stay consistent, with guidance tailored to you individually.",
+    title: "Direct Accountability",
+    body: "Ongoing, personal accountability directly with TheFitSteph.",
   },
   {
     title: "Monthly Coaching Membership",
-    body: "A recurring monthly membership for ongoing, direct accountability.",
+    body: "A recurring monthly membership that adapts with you month to month.",
   },
 ];
 
@@ -46,13 +46,13 @@ const howItWorks = [
   },
   {
     number: "02",
-    title: "Work directly with TheFitSteph",
-    body: "Get direct, personal accountability built around you.",
+    title: "Build a plan around your life",
+    body: "Your plan is built around your schedule, responsibilities and availability, not the other way around.",
   },
   {
     number: "03",
     title: "Stay consistent every month",
-    body: "Your coaching membership renews monthly, keeping your accountability ongoing.",
+    body: "Your coaching membership renews monthly, adapting with you as life changes.",
   },
 ];
 
@@ -73,9 +73,14 @@ export default function OneOnOnePage() {
           <h1 className="max-w-3xl font-display text-4xl font-medium leading-[1.1] text-ink sm:text-5xl">
             One-on-One Coaching
           </h1>
-          <p className="max-w-xl text-lg leading-relaxed text-ink/70">
-            Direct, personal accountability with TheFitSteph. The most
-            hands-on way to finally stay consistent.
+          <p className="max-w-xl text-lg leading-relaxed text-ink/80">
+            Your plan should work with your life, not compete with it.
+          </p>
+          <p className="max-w-xl text-base leading-relaxed text-ink/60">
+            One-on-One Coaching is personalized accountability built around
+            your schedule, your responsibilities and what you can
+            realistically sustain, not a rigid program you have to force your
+            life around.
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink/60">
             <span>For men and women</span>
@@ -93,7 +98,7 @@ export default function OneOnOnePage() {
 
       <section className="bg-cream-dark py-24">
         <Container>
-          <SectionHeading eyebrow="Who It's For" title="Built for people who want the most direct support." />
+          <SectionHeading eyebrow="Who It's For" title="Built for a plan that fits your life." />
           <ul className="mt-12 grid gap-x-8 gap-y-5 sm:grid-cols-2">
             {whoItsFor.map((item) => (
               <li key={item} className="flex items-start gap-3">
@@ -157,12 +162,13 @@ export default function OneOnOnePage() {
 
       <section className="bg-cream py-24">
         <Container>
-          <SectionHeading eyebrow="The Experience" title="Working directly with TheFitSteph." />
+          <SectionHeading eyebrow="The Experience" title="A plan that moves with your life." />
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/70">
-            As a One-on-One Coaching client, you get the most direct and
-            personal level of accountability TheFitSteph offers. It is built
-            around you individually, month to month, for people who want
-            hands-on guidance rather than a self-paced or group setting.
+            Instead of forcing your life to fit a rigid program, One-on-One
+            Coaching is built around it: your schedule, your responsibilities
+            and what you can realistically keep up with month to month. It is
+            the most personalized and flexible way TheFitSteph offers direct
+            accountability.
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink/50">
             Consistency is what this coaching membership is built around.
@@ -174,11 +180,11 @@ export default function OneOnOnePage() {
       <section className="bg-green-dark py-24 sm:py-32">
         <Container className="flex flex-col items-center gap-8 text-center">
           <h2 className="max-w-2xl font-display text-3xl font-medium leading-tight text-cream sm:text-4xl">
-            Get The Most Hands-On Support.
+            Your Plan Should Work With Your Life.
           </h2>
           <p className="max-w-xl text-lg leading-relaxed text-cream/75">
             One-on-One Coaching is {program.price} {program.cadence}, open
-            to men and women who want direct, personal accountability.
+            to men and women who want a plan built around their actual life.
           </p>
           <Button href="/get-started">Get Started</Button>
         </Container>
