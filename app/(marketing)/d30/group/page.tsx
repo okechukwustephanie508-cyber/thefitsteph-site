@@ -8,7 +8,7 @@ import { programs } from "@/lib/programs";
 export const metadata: Metadata = {
   title: "D30 Group",
   description:
-    "Accountability, community and a shared 30-day commitment, for the woman who is tired of starting over.",
+    "A group fitness, faith and accountability program for women who want structure, community and accountability, not individual 1-on-1 coaching.",
 };
 
 // lib/programs.ts is the single source of truth for pricing across the
@@ -18,23 +18,77 @@ const program = programs.find((p) => p.href === "/d30/group")!;
 
 const whoItsFor = [
   "Knows what to do, but struggles to stay consistent",
-  "Wants accountability, not just another plan",
+  "Wants structure, community and accountability, not individual 1-on-1 coaching",
   "Wants the support of other women holding each other to it",
   "Is ready to stop starting over",
 ];
 
 const included = [
   {
-    title: "Accountability",
-    body: "A structure that keeps you showing up for the commitments you already made to yourself.",
+    title: "4 Live Workouts Per Week",
+    body: "Four live workout sessions every week.",
   },
   {
-    title: "Community",
-    body: "Women moving through the same 30-day commitment, encouraging and holding each other accountable.",
+    title: "Daily Accountability & Check-ins",
+    body: "Regular accountability to help you stay consistent.",
   },
   {
-    title: "A Shared 30-Day Commitment",
-    body: "Everyone in the group moves through the same cycle together, so you are never doing it alone.",
+    title: "Weekly Nutrition/Meal Challenges",
+    body: "Structured weekly nutrition challenges to help you build better eating habits.",
+  },
+  {
+    title: "Fasting Tracking",
+    body: "Support and tracking around fasting as part of the program structure.",
+  },
+  {
+    title: "Water Intake Tracking",
+    body: "Accountability around your daily water intake.",
+  },
+  {
+    title: "Progress Tracking",
+    body: "Track your progress throughout the program.",
+  },
+  {
+    title: "Monthly Live Check-in & Progress Review",
+    body: "A live monthly session focused on checking in and reviewing your progress.",
+  },
+  {
+    title: "Women-Only Community",
+    body: "A supportive community of women going through the program together.",
+  },
+  {
+    title: "Mindset & Consistency Support",
+    body: "Support focused on helping you develop consistency and maintain healthy habits.",
+  },
+  {
+    title: "Monthly Challenge/Focus",
+    body: "Each month has a structured focus or challenge to keep you engaged.",
+  },
+  {
+    title: "Nigerian-Friendly Nutrition Guidance",
+    body: "Nutrition guidance built around Nigerian foods and eating habits.",
+  },
+  {
+    title: "Workout Replays",
+    body: "Replay access to workouts, where applicable.",
+  },
+];
+
+const ninetyDayPhases = [
+  {
+    range: "Days 1-30",
+    phase: "Build",
+    body: "The first 30 days, focused on building your foundation.",
+  },
+  {
+    range: "Days 31-60",
+    phase: "Strengthen",
+    body: "The next 30 days, focused on strengthening what you've built.",
+  },
+  {
+    range: "Days 61-90",
+    phase: "Sustain",
+    body: "The final 30 days, focused on sustaining your consistency.",
   },
 ];
 
@@ -42,17 +96,17 @@ const howItWorks = [
   {
     number: "01",
     title: "Join D30 Group",
-    body: "Get started with a monthly membership and join the current 30-day commitment.",
+    body: "Get started with the 30-day or 90-day option and join the current group.",
   },
   {
     number: "02",
-    title: "Stay accountable through the cycle",
-    body: "Move through the same 30-day commitment as the group, with the structure and support to stay consistent.",
+    title: "Show up for live workouts and daily check-ins",
+    body: "Join four live workouts a week and stay on track with daily accountability, nutrition challenges, fasting and water tracking.",
   },
   {
     number: "03",
-    title: "Renew and keep going",
-    body: "Your membership renews monthly, so you can keep staying accountable, commitment after commitment.",
+    title: "Review your progress and keep going",
+    body: "Join your monthly live check-in and progress review, then renew and carry the same structure into the next month.",
   },
 ];
 
@@ -77,20 +131,27 @@ export default function D30GroupPage() {
             Accountability is the plan. Fitness is how we show it.
           </p>
           <p className="max-w-xl text-base leading-relaxed text-ink/60">
-            You already know what to do. The hard part has never been the
-            plan, it has been staying with it long enough to see it through.
-            D30 Group is the accountability, community and structure that
-            helps you finally stop starting over.
+            D30 Group is a group fitness, faith and accountability program
+            for women who want structure, community and accountability, not
+            individual 1-on-1 coaching. You already know what to do. D30
+            Group gives you the structure and community to actually stay
+            with it.
           </p>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink/60">
-            <span>Women only</span>
-            <span aria-hidden="true">&middot;</span>
-            <span className="font-display text-lg text-green">
-              {program.price}
-              <span className="ml-1 font-sans text-sm font-normal text-ink/50">
-                {program.cadence}
-              </span>
-            </span>
+          <span className="text-sm text-ink/60">Women only</span>
+          <div className="grid w-full max-w-xl gap-4 sm:grid-cols-2">
+            {program.pricingOptions!.map((option) => (
+              <div
+                key={option.label}
+                className="rounded-2xl border border-ink/10 bg-cream-dark px-5 py-4"
+              >
+                <p className="text-xs font-semibold uppercase tracking-wide text-ink/50">
+                  {option.label}
+                </p>
+                <p className="mt-1 font-display text-lg text-green">
+                  {option.price}
+                </p>
+              </div>
+            ))}
           </div>
           <Button href="/get-started">Get Started</Button>
         </Container>
@@ -118,7 +179,7 @@ export default function D30GroupPage() {
       <section className="bg-cream py-24">
         <Container>
           <SectionHeading eyebrow="What You Get" title="The accountability built into your membership." />
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {included.map((item) => (
               <article
                 key={item.title}
@@ -133,10 +194,48 @@ export default function D30GroupPage() {
               </article>
             ))}
           </div>
+          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-ink/50">
+            D30 Group is not 1-on-1 coaching. It does not include an
+            individualized macro calculation, a personalized workout plan or
+            private 1-on-1 coaching. The accountability, structure and
+            community are what make it work.
+          </p>
         </Container>
       </section>
 
       <section className="bg-cream-dark py-24">
+        <Container>
+          <SectionHeading
+            eyebrow="The 90-Day Option"
+            title="Choose 90 days and go through three phases."
+          />
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/70">
+            The 30-day and 90-day options include the same benefits above.
+            Choose 90 days and your membership is structured into three
+            30-day phases, so your commitment builds over the full journey.
+          </p>
+          <ol className="mt-12 grid gap-8 sm:grid-cols-3">
+            {ninetyDayPhases.map((step) => (
+              <li
+                key={step.phase}
+                className="flex flex-col gap-3 border-t-2 border-green pt-6"
+              >
+                <span className="text-sm font-semibold uppercase tracking-wide text-ink/50">
+                  {step.range}
+                </span>
+                <span className="font-display text-2xl text-ink">
+                  {step.phase}
+                </span>
+                <p className="text-sm leading-relaxed text-ink/70">
+                  {step.body}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </Container>
+      </section>
+
+      <section className="bg-cream py-24">
         <Container>
           <SectionHeading eyebrow="How It Works" title="Three steps to join the group." />
           <ol className="mt-16 grid gap-8 sm:grid-cols-3">
@@ -160,15 +259,17 @@ export default function D30GroupPage() {
         </Container>
       </section>
 
-      <section className="bg-cream py-24">
+      <section className="bg-cream-dark py-24">
         <Container>
           <SectionHeading eyebrow="The Experience" title="Finally staying with it." />
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/70">
-            It is easy to start a plan. It is much harder to stay with one.
-            D30 Group gives you the accountability, the community and the
-            structure to finally follow through on the commitments you have
-            already made to yourself, alongside other women doing the same
-            thing.
+            D30 Group is a group fitness, faith and accountability program,
+            built for women who want structure, community and accountability,
+            not private 1-on-1 coaching. Between four live workouts a week,
+            daily check-ins, weekly nutrition challenges, fasting and water
+            tracking, and a women-only community holding each other
+            accountable, D30 Group gives you the structure to actually follow
+            through.
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink/50">
             Fitness is part of the transformation, but staying consistent is
@@ -184,8 +285,10 @@ export default function D30GroupPage() {
             You Don&rsquo;t Need Another Plan. You Need To Stay With It.
           </h2>
           <p className="max-w-xl text-lg leading-relaxed text-cream/75">
-            D30 Group is {program.price} {program.cadence}, for the woman
-            who is ready to stop starting over.
+            D30 Group is {program.pricingOptions![0].price} for 30 days, or{" "}
+            {program.pricingOptions![1].price} for 90 days, for the woman
+            who wants structure, community and accountability, not 1-on-1
+            coaching.
           </p>
           <Button href="/get-started">Get Started</Button>
         </Container>

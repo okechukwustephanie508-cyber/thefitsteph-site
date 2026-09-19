@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { programs } from "@/lib/programs";
@@ -18,9 +19,10 @@ export default function Programs() {
         </p>
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {programs.map((program) => (
-            <article
+            <Link
               key={program.name}
-              className="flex h-full flex-col justify-between gap-8 border border-ink/10 bg-cream-dark p-8"
+              href={program.href}
+              className="flex h-full flex-col justify-between gap-8 border border-ink/10 bg-cream-dark p-8 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-ink/25 hover:shadow-lg hover:shadow-ink/5 active:translate-y-0 active:scale-[0.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green"
             >
               <div className="flex flex-col gap-4">
                 <h3 className="font-display text-xl text-ink">
@@ -36,7 +38,7 @@ export default function Programs() {
                   {program.cadence}
                 </span>
               </p>
-            </article>
+            </Link>
           ))}
         </div>
       </Container>

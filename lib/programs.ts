@@ -1,9 +1,15 @@
+export type PricingOption = {
+  label: string;
+  price: string;
+};
+
 export type Program = {
   name: string;
   price: string;
   cadence: string;
   description: string;
   href: string;
+  pricingOptions?: PricingOption[];
 };
 
 export const programs: Program[] = [
@@ -12,7 +18,7 @@ export const programs: Program[] = [
     price: "₦10,000",
     cadence: "per month",
     description:
-      "Structured live workouts and accountability for showing up, session after session.",
+      "A women-only virtual gym: 4 live workouts a week, home-friendly training and accountability to stay consistent without a gym commute.",
     href: "/d30/remote-gym",
   },
   {
@@ -20,23 +26,32 @@ export const programs: Program[] = [
     price: "₦15,000",
     cadence: "one-time",
     description:
-      "The full D30 structure, built for going at it on your own schedule and your own pace.",
+      "The self-paced 30-day D30 system: lifetime access, a daily checklist and progress tracking, open to men and women.",
     href: "/d30/diy",
   },
   {
     name: "D30 Group",
     price: "₦30,000",
-    cadence: "per month",
+    cadence: "for 30 days",
     description:
-      "Accountability, community and a shared 30-day commitment, for the woman who is tired of starting over.",
+      "4 live workouts a week, nutrition challenges and a women-only accountability community, over a 30-day or 90-day commitment.",
     href: "/d30/group",
+    pricingOptions: [
+      { label: "30 Days", price: "₦30,000" },
+      { label: "90 Days", price: "₦75,000" },
+    ],
   },
   {
     name: "One-on-One Coaching",
     price: "₦100,000",
-    cadence: "per month",
+    cadence: "for 30 days",
     description:
-      "A personalized plan built around your life, with direct accountability from TheFitSteph.",
+      "A personalized macro calculation, nutrition guidance and workout plan built around you, with 4 live workouts a week and daily accountability.",
     href: "/one-on-one",
+    pricingOptions: [
+      { label: "30 Days", price: "₦100,000" },
+      { label: "90 Days", price: "₦270,000" },
+      { label: "90-Day Payment Plan", price: "2 payments of ₦135,000" },
+    ],
   },
 ];

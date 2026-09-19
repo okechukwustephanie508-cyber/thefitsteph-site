@@ -8,7 +8,7 @@ import { programs } from "@/lib/programs";
 export const metadata: Metadata = {
   title: "D30 Remote Gym",
   description:
-    "A structured remote fitness program built around showing up consistently and staying accountable wherever you train.",
+    "Your virtual gym for staying active, strong and consistent without having to go to a physical gym. Women only.",
 };
 
 // lib/programs.ts is the single source of truth for pricing across the
@@ -16,35 +16,60 @@ export const metadata: Metadata = {
 // separate literal.
 const program = programs.find((p) => p.href === "/d30/remote-gym")!;
 
+const whoItsFor = [
+  "Works from home and wants to stay active without leaving the house",
+  "Is busy and doesn't have time to commute to a physical gym",
+  "Is a busy mom fitting fitness around a full schedule",
+  "Doesn't feel comfortable with the pressure or environment of a traditional gym",
+];
+
 const included = [
-  "4 live workouts per week",
-  "Live workouts at 5:00 AM GMT+1, Nigeria time",
-  "7,000 daily steps challenge",
-  "Workout access and workout links",
-  "Monthly workout attendance checklist and history",
-  "Remote accountability and structure",
+  {
+    title: "4 Live Workouts Per Week",
+    body: "Four live workout sessions every week.",
+  },
+  {
+    title: "Home-Friendly Workouts",
+    body: "Workouts designed to be performed from home.",
+  },
+  {
+    title: "Women-Only Fitness Community",
+    body: "A supportive female fitness environment.",
+  },
+  {
+    title: "Accountability & Encouragement",
+    body: "Support to help you remain consistent with your workouts.",
+  },
+  {
+    title: "Strength, Mobility & Conditioning Workouts",
+    body: "Training that helps you build strength, improve mobility and improve your overall fitness.",
+  },
+  {
+    title: "Convenient Virtual Gym Experience",
+    body: "Participate from home without needing to commute to a physical gym.",
+  },
 ];
 
 const howItWorks = [
   {
     number: "01",
-    title: "The 30-Day Cycle",
-    body: "Your membership runs in 30-day cycles. Each cycle is 30 days of access to the program, not a fixed number of workouts. You train within that window on the weekly schedule.",
+    title: "Join D30 Remote Gym",
+    body: "Get started with your women-only virtual gym membership.",
   },
   {
     number: "02",
-    title: "Four Live Workouts a Week",
-    body: "Live workouts run four times a week at 5:00 AM GMT+1, Nigeria time, so you always know when to show up and can build your routine around it.",
+    title: "Train four times a week, live",
+    body: "Join four live workouts a week, live at 5:00 AM GMT+1, Nigeria time, so you always know when to show up.",
   },
   {
     number: "03",
-    title: "The 7,000 Steps Challenge",
-    body: "Alongside the live workouts, members take on a daily challenge to hit 7,000 steps, building consistent movement into every day, not only training days.",
+    title: "Train from home, at your pace",
+    body: "Workouts are designed to be performed from home, so you can stay active without commuting to a physical gym.",
   },
   {
     number: "04",
-    title: "Attendance and Accountability",
-    body: "A monthly workout attendance checklist keeps a record of your consistency, backed by remote accountability and structure wherever you are training from.",
+    title: "Stay accountable, together",
+    body: "Get accountability and encouragement from a supportive women-only fitness community as you build strength, mobility and consistency.",
   },
 ];
 
@@ -65,12 +90,17 @@ export default function D30RemoteGymPage() {
           <h1 className="max-w-3xl font-display text-4xl font-medium leading-[1.1] text-ink sm:text-5xl">
             D30 Remote Gym
           </h1>
-          <p className="max-w-xl text-lg leading-relaxed text-ink/70">
-            A structured remote fitness program built around showing up
-            consistently and staying accountable wherever you train.
+          <p className="max-w-xl text-lg leading-relaxed text-ink/80">
+            Your virtual gym for staying active, strong and consistent
+            without having to go to a physical gym.
+          </p>
+          <p className="max-w-xl text-base leading-relaxed text-ink/60">
+            Built for work-from-home women, busy women and busy moms who
+            don&rsquo;t have time to commute to a gym, or don&rsquo;t feel
+            comfortable with the pressure of a traditional gym environment.
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink/60">
-            <span>For men and women</span>
+            <span>Women only</span>
             <span aria-hidden="true">&middot;</span>
             <span className="font-display text-lg text-green">
               {program.price}
@@ -85,9 +115,9 @@ export default function D30RemoteGymPage() {
 
       <section className="bg-cream-dark py-24">
         <Container>
-          <SectionHeading eyebrow="What You Get" title="Included in your membership." />
+          <SectionHeading eyebrow="Who It's For" title="Built for busy women who want to stay active." />
           <ul className="mt-12 grid gap-x-8 gap-y-5 sm:grid-cols-2">
-            {included.map((item) => (
+            {whoItsFor.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <span
                   aria-hidden="true"
@@ -103,6 +133,27 @@ export default function D30RemoteGymPage() {
       </section>
 
       <section className="bg-cream py-24">
+        <Container>
+          <SectionHeading eyebrow="What You Get" title="Included in your membership." />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {included.map((item) => (
+              <article
+                key={item.title}
+                className="flex flex-col gap-3 border border-ink/10 bg-cream-dark p-8"
+              >
+                <h3 className="font-display text-xl text-ink">
+                  {item.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-ink/70">
+                  {item.body}
+                </p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-cream-dark py-24">
         <Container>
           <SectionHeading eyebrow="How It Works" title="Structure you can plan your week around." />
           <ol className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -123,7 +174,21 @@ export default function D30RemoteGymPage() {
               </li>
             ))}
           </ol>
-          <p className="mt-12 max-w-2xl text-sm leading-relaxed text-ink/50">
+        </Container>
+      </section>
+
+      <section className="bg-cream py-24">
+        <Container>
+          <SectionHeading eyebrow="The Experience" title="Stay active, without the gym." />
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/70">
+            Remote Gym is built for women who want to stay physically active,
+            avoid a sedentary lifestyle and build consistency with exercise,
+            without needing to go to a physical gym. Through four live
+            workouts a week, strength, mobility and conditioning training, and
+            the support of a women-only fitness community, Remote Gym helps
+            you build a stronger, healthier body from home.
+          </p>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink/50">
             Consistency is what this program is built around. Results are
             personal, vary from person to person, and take time.
           </p>
@@ -133,11 +198,12 @@ export default function D30RemoteGymPage() {
       <section className="bg-green-dark py-24 sm:py-32">
         <Container className="flex flex-col items-center gap-8 text-center">
           <h2 className="max-w-2xl font-display text-3xl font-medium leading-tight text-cream sm:text-4xl">
-            Show Up. Stay Accountable. Keep Training.
+            Stay Active. Stay Consistent. Stay Home.
           </h2>
           <p className="max-w-xl text-lg leading-relaxed text-cream/75">
-            D30 Remote Gym is {program.price} {program.cadence}, open to men
-            and women wherever you train.
+            D30 Remote Gym is {program.price} {program.cadence}, a
+            women-only virtual gym for staying active, strong and consistent
+            without having to go to a physical gym.
           </p>
           <Button href="/get-started">Get Started</Button>
         </Container>

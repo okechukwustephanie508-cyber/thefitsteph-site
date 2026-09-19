@@ -8,7 +8,7 @@ import { programs } from "@/lib/programs";
 export const metadata: Metadata = {
   title: "D30 DIY",
   description:
-    "A structured 30-day fitness reset you can complete independently, with everything you need to stay consistent.",
+    "The self-paced 30-day D30 system, with lifetime access, a daily checklist and progress tracking, open to men and women.",
 };
 
 // lib/programs.ts is the single source of truth for pricing across the
@@ -17,29 +17,37 @@ export const metadata: Metadata = {
 const program = programs.find((p) => p.href === "/d30/diy")!;
 
 const whoItsFor = [
-  "Wants to work out independently",
-  "Needs a structured 30-day plan",
-  "Wants guidance without live coaching",
-  "Wants to build consistency",
-  "Wants a simple framework they can follow from home",
+  "Wants to follow the D30 system independently, at their own pace",
+  "Wants lifetime access without a recurring membership",
+  "Wants a complete fitness, nutrition and consistency system",
+  "Wants a daily checklist and progress tracking to stay on track",
+  "Open to both men and women",
 ];
 
 const included = [
   {
-    title: "The Full D30 Framework",
-    body: "The complete D30 system, structured into a 30-day plan you follow independently, on your own terms.",
+    title: "Self-Paced 30-Day D30 Program",
+    body: "Work through the full D30 system at your own pace, over 30 days.",
   },
   {
-    title: "Self-Paced Structure",
-    body: "Built for people who want the system without a live schedule to work around.",
+    title: "Lifetime Access",
+    body: "Keep access to the program for as long as you need it, with no expiry.",
   },
   {
-    title: "A Clear Day-by-Day Plan",
-    body: "A straightforward plan and accountability tools designed to remove the guesswork, so you always know what to do next.",
+    title: "Fitness, Nutrition & Consistency System",
+    body: "A complete system covering fitness, nutrition and the habits that keep you consistent.",
   },
   {
-    title: "One-Time Access",
-    body: "A single one-time payment for the full 30-day reset, not a recurring membership.",
+    title: "Daily Checklist",
+    body: "A daily checklist to help you stay on track with the framework.",
+  },
+  {
+    title: "Progress Tracking",
+    body: "Track your own progress as you move through the program.",
+  },
+  {
+    title: "Personal Account",
+    body: "A personal account to track your progress in one place.",
   },
 ];
 
@@ -47,17 +55,17 @@ const howItWorks = [
   {
     number: "01",
     title: "Join D30 DIY",
-    body: "Get started with a one-time payment and immediate access to the full D30 framework.",
+    body: "Get started with a one-time payment and get lifetime access to the D30 system.",
   },
   {
     number: "02",
-    title: "Follow your 30-day plan",
-    body: "Move through the structured plan at your own pace, on your own schedule, from wherever you train.",
+    title: "Follow your self-paced 30-day plan",
+    body: "Move through the fitness, nutrition and consistency system using your daily checklist, at your own pace.",
   },
   {
     number: "03",
-    title: "Complete the reset and build consistency",
-    body: "Finish the 30 days having built the structure and habits to keep showing up for yourself.",
+    title: "Track your progress in your personal account",
+    body: "Use your personal account to track your progress as you complete the program.",
   },
 ];
 
@@ -79,13 +87,14 @@ export default function D30DiyPage() {
             D30 DIY
           </h1>
           <p className="max-w-xl text-lg leading-relaxed text-ink/80">
-            A structured 30-day fitness reset you can complete independently,
-            with everything you need to stay consistent.
+            The self-paced 30-day D30 system, built for people who want to
+            follow it independently, on their own schedule.
           </p>
           <p className="max-w-xl text-base leading-relaxed text-ink/60">
-            This is a self-guided 30-day fitness reset for anyone who wants
-            structure, accountability tools and a clear plan without live
-            coaching.
+            D30 DIY does not include live coaching, live workouts with
+            TheFitSteph, 1-on-1 coaching, personalized macro calculation or
+            daily personal accountability from TheFitSteph. It is designed
+            for people who want to follow the system on their own.
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink/60">
             <span>For men and women</span>
@@ -122,8 +131,8 @@ export default function D30DiyPage() {
 
       <section className="bg-cream py-24">
         <Container>
-          <SectionHeading eyebrow="What's Included" title="Everything in your one-time reset." />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <SectionHeading eyebrow="What's Included" title="Everything in your one-time program." />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {included.map((item) => (
               <article
                 key={item.title}
@@ -143,7 +152,7 @@ export default function D30DiyPage() {
 
       <section className="bg-cream-dark py-24">
         <Container>
-          <SectionHeading eyebrow="How It Works" title="Three steps to your reset." />
+          <SectionHeading eyebrow="How It Works" title="Three steps to get started." />
           <ol className="mt-16 grid gap-8 sm:grid-cols-3">
             {howItWorks.map((step) => (
               <li
@@ -167,17 +176,18 @@ export default function D30DiyPage() {
 
       <section className="bg-cream py-24">
         <Container>
-          <SectionHeading eyebrow="The Experience" title="What the next 30 days look like." />
+          <SectionHeading eyebrow="The Experience" title="Built to follow on your own." />
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/70">
-            Over the 30 days, you move through the D30 framework at a pace
-            that fits your life. There is no live class to log into and no
-            fixed schedule to keep up with. Instead, you get a clear
-            structure to follow and accountability tools built to remove the
-            guesswork, so all that is left to do is show up for yourself, one
-            day at a time.
+            D30 DIY is designed for people who want to follow the D30 system
+            independently. There are no live workouts, no 1-on-1 coaching, no
+            personalized macro calculation and no daily personal
+            accountability from TheFitSteph. Instead, you get the full
+            fitness, nutrition and consistency system, a daily checklist,
+            progress tracking and a personal account, so you can work through
+            the program entirely on your own terms.
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink/50">
-            Consistency is what this reset is built around. Results are
+            Consistency is what this program is built around. Results are
             personal, vary from person to person, and take time.
           </p>
         </Container>
@@ -186,11 +196,11 @@ export default function D30DiyPage() {
       <section className="bg-green-dark py-24 sm:py-32">
         <Container className="flex flex-col items-center gap-8 text-center">
           <h2 className="max-w-2xl font-display text-3xl font-medium leading-tight text-cream sm:text-4xl">
-            Start Your Reset. Build Your Consistency.
+            Follow The System, On Your Own Terms.
           </h2>
           <p className="max-w-xl text-lg leading-relaxed text-cream/75">
             D30 DIY is {program.price}, {program.cadence}, open to men and
-            women who want to do this on their own terms.
+            women who want to follow the D30 system independently.
           </p>
           <Button href="/get-started">Get Started</Button>
         </Container>

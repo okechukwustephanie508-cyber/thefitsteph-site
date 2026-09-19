@@ -8,7 +8,7 @@ import { programs } from "@/lib/programs";
 export const metadata: Metadata = {
   title: "One-on-One Coaching",
   description:
-    "A personalized plan built around your life, with direct accountability from TheFitSteph.",
+    "A detailed personalized macro calculation, nutrition guidance and a workout plan built specifically for you, with 4 live workouts a week and daily accountability.",
 };
 
 // lib/programs.ts is the single source of truth for pricing across the
@@ -17,24 +17,40 @@ export const metadata: Metadata = {
 const program = programs.find((p) => p.href === "/one-on-one")!;
 
 const whoItsFor = [
-  "Wants a plan built around their actual schedule and responsibilities",
-  "Wants personalized accountability, not a one-size-fits-all program",
-  "Wants flexibility a group or self-paced program cannot offer",
-  "Wants support that adapts as life changes",
+  "Wants individual attention and a program built specifically around them",
+  "Wants their own personalized macro and nutrition targets, not a generic plan",
+  "Wants direct, ongoing 1-on-1 coaching support",
+  "Wants their progress reviewed and adjusted every week",
 ];
 
 const included = [
   {
-    title: "A Personalized Plan",
-    body: "Built around your schedule, your responsibilities and what you can realistically sustain.",
+    title: "Detailed Personalized Macro Calculation",
+    body: "Your individual calorie and macronutrient targets, calculated based on your body, goals, activity level and lifestyle.",
   },
   {
-    title: "Direct Accountability",
-    body: "Ongoing, personal accountability directly with TheFitSteph.",
+    title: "Personalized Nutrition Guidance",
+    body: "Nutrition guidance tailored to your individual goals and macro targets.",
   },
   {
-    title: "Monthly Coaching Membership",
-    body: "A recurring monthly membership that adapts with you month to month.",
+    title: "Personalized Workout Plan",
+    body: "A workout structure designed specifically around your goals, fitness level and circumstances.",
+  },
+  {
+    title: "4 Live Workouts Per Week",
+    body: "Four live workout sessions every week with TheFitSteph.",
+  },
+  {
+    title: "Daily Accountability & Check-ins",
+    body: "Ongoing accountability and direct support to help you stay consistent.",
+  },
+  {
+    title: "Weekly Progress Reviews",
+    body: "Your progress is reviewed weekly, and your approach is adjusted based on your progress.",
+  },
+  {
+    title: "Direct 1-on-1 Coaching Support",
+    body: "Personalized coaching and support directly from TheFitSteph throughout your coaching period.",
   },
 ];
 
@@ -42,17 +58,17 @@ const howItWorks = [
   {
     number: "01",
     title: "Join One-on-One Coaching",
-    body: "Get started with a monthly coaching membership.",
+    body: "Get started and choose the 30-day or 90-day option that fits you.",
   },
   {
     number: "02",
-    title: "Build a plan around your life",
-    body: "Your plan is built around your schedule, responsibilities and availability, not the other way around.",
+    title: "Get your personalized macros, nutrition and workout plan",
+    body: "Receive your detailed macro calculation, nutrition guidance and workout plan, built around your body, goals, activity level and lifestyle.",
   },
   {
     number: "03",
-    title: "Stay consistent every month",
-    body: "Your coaching membership renews monthly, adapting with you as life changes.",
+    title: "Train, check in and get reviewed every week",
+    body: "Join 4 live workouts a week, stay on track with daily accountability and check-ins, and get your progress reviewed weekly with direct 1-on-1 support.",
   },
 ];
 
@@ -74,23 +90,30 @@ export default function OneOnOnePage() {
             One-on-One Coaching
           </h1>
           <p className="max-w-xl text-lg leading-relaxed text-ink/80">
-            Your plan should work with your life, not compete with it.
+            The premium personalized coaching option for women who want
+            individual attention and a program tailored specifically to them.
           </p>
           <p className="max-w-xl text-base leading-relaxed text-ink/60">
-            One-on-One Coaching is personalized accountability built around
-            your schedule, your responsibilities and what you can
-            realistically sustain, not a rigid program you have to force your
-            life around.
+            One-on-One Coaching pairs a detailed personalized macro
+            calculation with nutrition guidance, a personalized workout plan,
+            four live workouts a week, daily accountability and weekly
+            progress reviews, all with direct 1-on-1 support from TheFitSteph.
           </p>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink/60">
-            <span>For men and women</span>
-            <span aria-hidden="true">&middot;</span>
-            <span className="font-display text-lg text-green">
-              {program.price}
-              <span className="ml-1 font-sans text-sm font-normal text-ink/50">
-                {program.cadence}
-              </span>
-            </span>
+          <span className="text-sm text-ink/60">For men and women</span>
+          <div className="grid w-full max-w-2xl gap-4 sm:grid-cols-3">
+            {program.pricingOptions!.map((option) => (
+              <div
+                key={option.label}
+                className="rounded-2xl border border-ink/10 bg-cream-dark px-5 py-4"
+              >
+                <p className="text-xs font-semibold uppercase tracking-wide text-ink/50">
+                  {option.label}
+                </p>
+                <p className="mt-1 font-display text-lg text-green">
+                  {option.price}
+                </p>
+              </div>
+            ))}
           </div>
           <Button href="/get-started">Get Started</Button>
         </Container>
@@ -98,7 +121,7 @@ export default function OneOnOnePage() {
 
       <section className="bg-cream-dark py-24">
         <Container>
-          <SectionHeading eyebrow="Who It's For" title="Built for a plan that fits your life." />
+          <SectionHeading eyebrow="Who It's For" title="Built for a plan that's built around you." />
           <ul className="mt-12 grid gap-x-8 gap-y-5 sm:grid-cols-2">
             {whoItsFor.map((item) => (
               <li key={item} className="flex items-start gap-3">
@@ -117,8 +140,8 @@ export default function OneOnOnePage() {
 
       <section className="bg-cream py-24">
         <Container>
-          <SectionHeading eyebrow="What You Get" title="Included in your coaching membership." />
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          <SectionHeading eyebrow="What You Get" title="Everything included in your coaching." />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {included.map((item) => (
               <article
                 key={item.title}
@@ -162,17 +185,18 @@ export default function OneOnOnePage() {
 
       <section className="bg-cream py-24">
         <Container>
-          <SectionHeading eyebrow="The Experience" title="A plan that moves with your life." />
+          <SectionHeading eyebrow="The Experience" title="Coaching built specifically around you." />
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/70">
-            Instead of forcing your life to fit a rigid program, One-on-One
-            Coaching is built around it: your schedule, your responsibilities
-            and what you can realistically keep up with month to month. It is
-            the most personalized and flexible way TheFitSteph offers direct
-            accountability.
+            Instead of a generic plan, One-on-One Coaching is built entirely
+            around you: a detailed personalized macro calculation, nutrition
+            guidance and a workout plan matched to your goals, fitness level
+            and circumstances, four live workouts a week, daily accountability
+            and check-ins, and weekly progress reviews with direct 1-on-1
+            support from TheFitSteph.
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink/50">
-            Consistency is what this coaching membership is built around.
-            Results are personal, vary from person to person, and take time.
+            Consistency is what this coaching is built around. Results are
+            personal, vary from person to person, and take time.
           </p>
         </Container>
       </section>
@@ -180,11 +204,13 @@ export default function OneOnOnePage() {
       <section className="bg-green-dark py-24 sm:py-32">
         <Container className="flex flex-col items-center gap-8 text-center">
           <h2 className="max-w-2xl font-display text-3xl font-medium leading-tight text-cream sm:text-4xl">
-            Your Plan Should Work With Your Life.
+            Coaching Built Specifically Around You.
           </h2>
           <p className="max-w-xl text-lg leading-relaxed text-cream/75">
-            One-on-One Coaching is {program.price} {program.cadence}, open
-            to men and women who want a plan built around their actual life.
+            One-on-One Coaching starts at {program.price} {program.cadence},
+            with a detailed personalized macro calculation, nutrition
+            guidance, a personalized workout plan, 4 live workouts a week and
+            direct 1-on-1 support.
           </p>
           <Button href="/get-started">Get Started</Button>
         </Container>
